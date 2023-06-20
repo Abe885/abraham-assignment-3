@@ -12,9 +12,9 @@ public class UserLoginService {
 		users = new User[4];
 	}
 
-	public void readFileUserData() {
-		BufferedReader fileReader = null;
-		int i = 0;
+	public void readFileUserData() {   // this method reads the info in the csv file, splits the info using "," as a delimiter
+		BufferedReader fileReader = null; // then sets each split element into an index in a User array with the corresponding value. 
+		int i = 0;							// then using a loop iterates it for every line. 
 		String line = "";
 
 		try {
@@ -46,8 +46,8 @@ public class UserLoginService {
 		}
 	}
 
-	public User verifyLogin(String usernameInput, String passwordInput) {
-		for (User user : users) {
+	public User verifyLogin(String usernameInput, String passwordInput) {		// second method cross references the user's input with the stored User info.
+		for (User user : users) {												// taking into account case sensitivity only for the password and not the username
 			if (user != null && user.getUsername().equalsIgnoreCase(usernameInput)
 					&& user.getPassword().equals(passwordInput)) {
 				return user;

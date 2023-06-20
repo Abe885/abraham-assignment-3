@@ -23,3 +23,4 @@ public class User {
 		return name;
 	}
 }
+// This is my User class. It just holds my private class variables, a constructor and getters for each value.
